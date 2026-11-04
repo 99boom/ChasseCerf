@@ -17,5 +17,66 @@ class Program
           sans consommer de flèche.
         - Afficher le bilan final de la chasse.
         */
+
+
+        Console.WriteLine("§§§ CHASSE AU CERF §§§");
+        Console.WriteLine("Arthur : Allons chasser ce cerf !");
+
+        // Déclaration des variables
+        int fleches = 5;
+        int tirsReussis = 0;
+        string resultat = "";
+
+        // Boucle de la chasse
+        while (fleches > 0 && tirsReussis < 3)
+        {
+            Console.WriteLine("\nFlèches restantes : " + fleches);
+
+            Console.WriteLine("Résultat du tir :");
+            Console.WriteLine("1 - Touché");
+            Console.WriteLine("2 - Raté");
+
+            resultat = Console.ReadLine();
+
+            if (resultat == "1")
+            {
+                fleches--;
+                tirsReussis++;
+
+                Console.WriteLine("Bien joué ! Le cerf est touché.");
+            }
+            else if (resultat == "2")
+            {
+                fleches--;
+
+                Console.WriteLine("Raté ! Le cerf s'est échappé de justesse.");
+            }
+            else
+            {
+                Console.WriteLine("Saisie invalide ! Choisissez 1 ou 2.");
+            }
+        }
+
+        // Bilan final
+        Console.WriteLine("\n===== BILAN DE LA CHASSE =====");
+
+        Console.WriteLine("Tirs réussis : " + tirsReussis);
+        Console.WriteLine("Flèches restantes : " + fleches);
+
+        if (tirsReussis == 3)
+        {
+            Console.WriteLine("Le cerf est abattu !");
+            Console.WriteLine("Résultat : Chasse réussie !");
+        }
+        else
+        {
+            Console.WriteLine("Le cerf s'est échappé !");
+            Console.WriteLine("Résultat : Chasse échouée !");
+        }
     }
 }
+
+
+
+
+    
